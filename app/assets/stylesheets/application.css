@@ -16,6 +16,6 @@
 
 body { padding-top: 70px; }
 
-.btn {
+.btn.btn-block {
   white-space: normal;
 }
