@@ -53,3 +53,7 @@ gem "omniauth-github"
 gem "omniauth-google-oauth2"
 gem "omniauth-openid"
 gem "google-api-client"
+
+gem 'rails_12factor', group: :production
+
+ruby "1.9.3"
