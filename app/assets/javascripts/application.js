@@ -23,7 +23,7 @@ $(document).ready(function() {
         var t = $(lnk.attr('href'))
         console.log(t);
 
-        t.removeClass('hidden');
+        t.hide().removeClass('hidden').slideDown();
         lnk.hide();
   });
 });
