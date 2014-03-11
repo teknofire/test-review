@@ -1,6 +1,6 @@
 class Section < ActiveRecord::Base
-  has_many :questions
-  
+  has_many :questions, -> { order('created_at') }
+
   def to_s
     name
   end
