@@ -1,4 +1,4 @@
-%p#notice= notice
+= render 'shared/notice'
 = render @section
 
 .row
@@ -11,6 +11,13 @@
       = render answer
   .col-lg-2.col-md-3.col-sm-4
     = link_to "Back to #{@section}", @section, class: 'btn btn-default btn-block'
+    .btn-group.btn-block
+      = link_to prev_section_question_path(@section, @question), class: 'btn btn-warning col-lg-6' do
+        %i.glyphicon.glyphicon-arrow-left
+        Prev
+      = link_to next_section_question_path(@section, @question), class: 'btn btn-success col-lg-6' do
+        Next
+        %i.glyphicon.glyphicon-arrow-right
     - if member?
       = link_to 'Add Answer', new_section_question_answer_path(@section, @question), class: 'btn btn-success btn-block'
       %hr

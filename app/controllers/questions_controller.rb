@@ -12,6 +12,28 @@ class QuestionsController < ApplicationController
   def show
   end
 
+  def prev
+    @prev =  @question.prev
+
+    if @prev.nil?
+      flash[:notice] = "There is no previous question"
+      redirect_to [@section, @question]
+    else
+      redirect_to [@section, @prev]
+    end
+  end
+
+  def next
+    @next =  @question.next
+
+    if @next.nil?
+      flash[:notice] = "There is no next question"
+      redirect_to [@section, @question]
+    else
+      redirect_to [@section, @next]
+    end
+  end
+
   # GET /questions/new
   def new
     @question = @section.questions.build

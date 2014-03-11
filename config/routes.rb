@@ -1,9 +1,10 @@
 TestReview::Application.routes.draw do
-  resources :answers
-  resources :questions
-
   resources :sections do
     resources :questions do
+      member do
+        get :prev
+        get :next
+      end
       resources :answers
     end
   end

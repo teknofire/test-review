@@ -1,10 +1,10 @@
-%p#notice= notice
+= render 'shared/notice'
 = render @section
 
 .row
   .col-lg-10.col-md-9.col-sm-8
     %h4 Questions:
-    - @section.questions.each_with_index do |question, index|
+    - @section.questions.chronological.each_with_index do |question, index|
       %b
         = link_to "Question ##{index}: ", [@section, question]
       = render question

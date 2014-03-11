@@ -1,5 +1,5 @@
 class Section < ActiveRecord::Base
-  has_many :questions, -> { order('created_at') }
+  has_many :questions
 
   def to_s
     name
