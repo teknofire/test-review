@@ -1,0 +1,15 @@
+%p#notice= notice
+= render @section
+
+.row
+  .col-lg-10.col-md-9.col-sm-8
+    %h4 Questions:
+    - @section.questions.each_with_index do |question, index|
+      %b
+        = link_to "Question ##{index}: ", [@section, question]
+      = render question
+
+  .col-lg-2.col-md-3.col-sm-4
+    = link_to 'Back to Section List', sections_path, class: 'btn btn-default btn-block'
+    - if member?
+      = link_to 'New Question', new_section_question_path(@section), class: 'btn btn-success btn-block'

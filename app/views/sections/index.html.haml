@@ -1,0 +1,11 @@
+%h1 Listing sections
+%table.table.table-striped.table-bordered
+  %thead
+    %tr
+      %th Name
+      %th Description
+  %tbody
+    - @sections.each do |section|
+      %tr
+        %td= link_to section, section
+        %td= section.description

@@ -1,0 +1,5 @@
+= link_to 'New Section', new_section_path, class: 'btn btn-success'
+  
+%ul.sections
+  - @sections.each do |section|
+    %li= link_to section, section

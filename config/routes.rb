@@ -1,6 +1,15 @@
 TestReview::Application.routes.draw do
-  get '/logout', to: 'sessions#destroy'
-  get '/login', to: 'sessions#new'
+  resources :answers
+  resources :questions
+
+  resources :sections do
+    resources :questions do
+      resources :answers
+    end
+  end
+
+  get '/logout', to: 'sessions#destroy', as: 'logout'
+  get '/login', to: 'sessions#new', as: 'login'
   get '/auth/:provider/disable', to: 'users#disable_provider'
   post '/auth/:provider/callback', to: 'sessions#create'
   get '/auth/:provider/callback', to: 'sessions#create'
@@ -14,7 +23,7 @@ TestReview::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
