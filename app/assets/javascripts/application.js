@@ -21,9 +21,8 @@ $(document).ready(function() {
   $(document).on('click', '[data-toggle="display"]', function(e) {
         var lnk = $(e.target);
         var t = $(lnk.attr('href'))
-        console.log(t);
 
         t.hide().removeClass('hidden').slideDown();
-        lnk.hide();
+        lnk.parent().slideUp();
   });
 });
