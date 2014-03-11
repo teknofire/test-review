@@ -7,8 +7,12 @@
     = render @question
 
     %h4 Answer:
-    - @question.answers.each do |answer|
-      = render answer
+    = link_to '#answer', data: { toggle: 'display' }, class: 'btn btn-block btn-success' do
+      Show answer
+      
+    #answer.hidden
+      - @question.answers.each do |answer|
+        = render answer
   .col-lg-2.col-md-3.col-sm-4
     = link_to "Back to #{@section}", @section, class: 'btn btn-default btn-block'
     .btn-group.btn-block

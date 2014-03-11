@@ -15,3 +15,15 @@
 //= require bootstrap/dist/js/bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+
+  $(document).on('click', '[data-toggle="display"]', function(e) {
+        var lnk = $(e.target);
+        var t = $(lnk.attr('href'))
+        console.log(t);
+
+        t.removeClass('hidden');
+        lnk.hide();
+  });
+});
