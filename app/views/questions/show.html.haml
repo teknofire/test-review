@@ -9,12 +9,11 @@
     %h4 Answer:
     = link_to '#answer', data: { toggle: 'display' }, class: 'btn btn-block btn-success' do
       Show answer
-      
+
     #answer.hidden
       - @question.answers.each do |answer|
         = render answer
   .col-lg-2.col-md-3.col-sm-4
-    = link_to "Back to #{@section}", @section, class: 'btn btn-default btn-block'
     .btn-group.btn-block
       = link_to prev_section_question_path(@section, @question), class: 'btn btn-warning col-lg-6 col-md-5 col-sm-6 col-xs-6' do
         %i.glyphicon.glyphicon-arrow-left
@@ -22,7 +21,9 @@
       = link_to next_section_question_path(@section, @question), class: 'btn btn-success col-lg-6 col-md-5 col-sm-6 col-xs-6' do
         Next
         %i.glyphicon.glyphicon-arrow-right
+    = link_to "Back to #{@section}", @section, class: 'btn btn-default btn-block'
     - if member?
+      %hr
       = link_to 'Add Answer', new_section_question_answer_path(@section, @question), class: 'btn btn-success btn-block'
       %hr
       = link_to 'Edit Question', edit_section_question_path(@section, @question), class: 'btn btn-primary btn-block'
