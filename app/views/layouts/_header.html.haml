@@ -6,7 +6,10 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to 'Test Review', root_path, class: 'navbar-brand'
+      .navbar-brand
+        %ol.breadcrumb
+          %li= link_to 'Test Review', root_path
+          = yield :breadcrumbs
     #page-navbar.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right
         - if member?

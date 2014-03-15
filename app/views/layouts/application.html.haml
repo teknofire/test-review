@@ -7,6 +7,13 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
+    .spinner-frame
+      .spinner
+        .rect1
+        .rect2
+        .rect3
+        .rect4
+        .rect5
     = render 'layouts/header'
     .container
       = yield

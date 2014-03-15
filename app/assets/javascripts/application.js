@@ -17,7 +17,6 @@
 //= require_tree .
 
 $(document).ready(function() {
-
   $(document).on('click', '[data-toggle="display"]', function(e) {
         var lnk = $(e.target);
         var t = $(lnk.attr('href'))
@@ -25,4 +24,8 @@ $(document).ready(function() {
         t.hide().removeClass('hidden').slideDown();
         lnk.parent().slideUp();
   });
+});
+
+$(document).on("page:fetch", function() {
+  $('.spinner-frame').fadeIn("slow");
 });

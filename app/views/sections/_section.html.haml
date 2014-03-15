@@ -1,2 +1,4 @@
 %h4= section.name
 %div= section.description
+- content_for :breadcrumbs do
+  %li= link_to section, section
