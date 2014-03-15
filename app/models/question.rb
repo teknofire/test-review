@@ -10,5 +10,5 @@ class Question < ActiveRecord::Base
 
   def next
     section.questions.where('id != ? and created_at >= ?', id, created_at).order(created_at: :asc).first
-  end
+  end  
 end

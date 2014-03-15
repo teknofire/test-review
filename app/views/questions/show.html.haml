@@ -2,7 +2,7 @@
 = render @section
 
 .row
-  .col-lg-10.col-md-9.col-sm-8
+  .col-lg-9.col-md-9.col-sm-8
     %h4 Question:
     = render @question
 
@@ -16,12 +16,14 @@
     #answer.hidden
       - @question.answers.each do |answer|
         = render answer
-  .col-lg-2.col-md-3.col-sm-4
+  .col-lg-3.col-md-3.col-sm-4
     .btn-group.btn-block
-      = link_to prev_section_question_path(@section, @question), class: 'btn btn-warning col-lg-6 col-md-5 col-sm-6 col-xs-6' do
+      = link_to prev_section_question_path(@section, @question), class: 'btn btn-warning col-lg-4 col-md-4 col-sm-4 col-xs-4' do
         %i.glyphicon.glyphicon-arrow-left
         Prev
-      = link_to next_section_question_path(@section, @question), class: 'btn btn-success col-lg-6 col-md-5 col-sm-6 col-xs-6' do
+      = link_to random_section_questions_path(@section), class: 'btn btn-info col-lg-4 col-md-4 col-sm-4 col-xs-4' do
+        Rand
+      = link_to next_section_question_path(@section, @question), class: 'btn btn-success col-lg-4 col-md-4 col-sm-4 col-xs-4' do
         Next
         %i.glyphicon.glyphicon-arrow-right
     = link_to "Back to #{@section}", @section, class: 'btn btn-default btn-block'

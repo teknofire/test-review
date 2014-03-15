@@ -11,6 +11,11 @@ class QuestionsController < ApplicationController
   # GET /questions/1.json
   def show
   end
+  
+  def random
+    id = @section.questions.pluck(:id).sample
+    redirect_to [@section, @section.questions.find(id)]
+  end
 
   def prev
     @prev =  @question.prev

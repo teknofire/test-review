@@ -5,6 +5,9 @@ TestReview::Application.routes.draw do
         get :prev
         get :next
       end
+      collection do
+        get :random
+      end
       resources :answers
     end
   end

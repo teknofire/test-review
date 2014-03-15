@@ -10,6 +10,7 @@
       = render question
 
   .col-lg-2.col-md-3.col-sm-4
+    = link_to 'Random Question', random_section_questions_path(@section), class: 'btn btn-info btn-block'
     = link_to 'Back to Section List', sections_path, class: 'btn btn-default btn-block'
     - if member?
       = link_to 'New Question', new_section_question_path(@section), class: 'btn btn-success btn-block'

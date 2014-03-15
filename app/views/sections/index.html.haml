@@ -3,9 +3,13 @@
   %thead
     %tr
       %th Name
-      %th Description
+      %th Actions
   %tbody
     - @sections.each do |section|
       %tr
-        %td= link_to section, section
-        %td= section.description
+        %td
+          = link_to section, section
+          %p= section.description
+        %td
+          = link_to random_section_questions_path(section), class: 'btn btn-info btn-block' do
+            Random Question
