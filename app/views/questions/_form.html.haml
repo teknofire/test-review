@@ -1,4 +1,4 @@
-= form_for([@section, @question]) do |f|
+= nested_form_for([@section, @question], html: { class: 'form-horizontal' }) do |f|
   - if @question.errors.any?
     #error_explanation
       %h2
@@ -9,8 +9,26 @@
           %li= msg
 
   .form-group
-    = f.label :text
-    = f.text_area :text, rows: 25, class: 'form-control'
+  .form-group
+    .col-lg-12
+      = f.text_area :text, rows: 10, class: 'form-control'
+    
+  .form-group
+    = f.label :answer_type, class: 'control-label col-lg-2 col-md-2'
+    .col-lg-3.col-md-3
+      = f.select :answer_type, Question::ANSWER_TYPES.invert, {}, class: 'form-control', data: { toggle: 'answer_type' }
+  
+  %fieldset#answers
+    %legend 
+      Answers      
+      = f.link_to_add :answers, class: 'btn btn-mini btn-success pull-right', data: { target: '#answers' } do
+        %i.glyphicon.glyphicon-plus
+        Add answer
+      
+    = f.fields_for :answers
+  
+  .form-group.text-right
+        
   .form-actions
     - if @question.new_record?
       = link_to 'Cancel', section_path(@section), class: 'btn btn-default'

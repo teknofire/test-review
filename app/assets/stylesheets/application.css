@@ -14,10 +14,29 @@
  *= require_tree .
  */
 
-body { padding-top: 70px; position: relative; }
+body { 
+  padding-top: 40px; position: relative; 
+  background: #5f5f5f;
+  color: #fff;
+}
 
 body > .container { position: relative; }
 
+#content {
+  background: #fff;
+  color: #000;
+  padding: 20px;
+}
+
+#footer {
+  padding: 10px;
+  background: #5f5f5f;
+  color: #fff;
+}
+
+.show-btn-block {
+  margin-bottom: 10px;
+}
 .btn.btn-block {
   white-space: normal;
 }

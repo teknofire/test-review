@@ -10,6 +10,7 @@
   .form-group
     = f.label :text
     = f.text_area :text, rows: 25, class: 'form-control'
+    
   .actions
     = link_to 'Cancel', section_question_path(@section, @question), class: 'btn btn-default'
     = f.submit class: 'btn btn-primary pull-right'

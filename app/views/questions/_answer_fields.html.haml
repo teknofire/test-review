@@ -1,0 +1,12 @@
+.form-group.row
+  .col-lg-9.col-md-9.col-sm-9.col-xs-9
+    = f.text_area :text, rows: 6, class: 'form-control'      
+  .col-lg-3.col-md-3.col-sm-3.col-xs-3
+    .form-group
+      %label
+        = f.check_box :correct, class: 'correct_answer_input'
+        Correct?
+    .form-group
+      = f.link_to_remove class: 'btn btn-danger' do
+        %i.glyphicon.glyphicon-trash
+        Remove

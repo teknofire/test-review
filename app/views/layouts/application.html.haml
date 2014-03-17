@@ -15,5 +15,7 @@
         .rect4
         .rect5
     = render 'layouts/header'
-    .container
-      = yield
+    %section#content
+      .container
+        = yield
+    = render 'layouts/footer'

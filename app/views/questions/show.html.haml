@@ -3,19 +3,21 @@
 
 .row
   .col-lg-9.col-md-9.col-sm-8
-    %h4 Question:
-    = render @question
+    %fieldset
+      %legend Question:
+      = render @question
 
-    %h4 Answer:
+    %fieldset
+      %legend Answer:
 
-    .show-btn-block
-      = link_to '#answer', data: { toggle: 'display' }, class: 'btn btn-lg btn-block btn-info' do
-        Show answer
-      %hr
+      .show-btn-block
+        = link_to '#answer', data: { toggle: 'display' }, class: 'btn btn-lg btn-block btn-info' do
+          Show answer
 
-    #answer.hidden
-      - @question.answers.each do |answer|
-        = render answer
+    %fieldset#answer.hidden
+      - @question.answers.correct.each do |answer|
+        %fieldset
+          = render answer
   .col-lg-3.col-md-3.col-sm-4
     .btn-group.btn-block
       = link_to prev_section_question_path(@section, @question), class: 'btn btn-warning col-lg-4 col-md-4 col-sm-4 col-xs-4' do
@@ -26,10 +28,7 @@
       = link_to next_section_question_path(@section, @question), class: 'btn btn-success col-lg-4 col-md-4 col-sm-4 col-xs-4' do
         Next
         %i.glyphicon.glyphicon-arrow-right
-    = link_to "Back to #{@section}", @section, class: 'btn btn-default btn-block'
     - if member?
-      %hr
-      = link_to 'Add Answer', new_section_question_answer_path(@section, @question), class: 'btn btn-success btn-block'
       %hr
       = link_to 'Edit Question', edit_section_question_path(@section, @question), class: 'btn btn-primary btn-block'
       = link_to 'Delete Question', [@section, @question], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-block'

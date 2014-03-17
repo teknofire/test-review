@@ -13,19 +13,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap/dist/js/bootstrap
+//= require jquery_nested_form
 //= require turbolinks
 //= require_tree .
 
 $(document).ready(function() {
   $(document).on('click', '[data-toggle="display"]', function(e) {
-        var lnk = $(e.target);
-        var t = $(lnk.attr('href'))
+    var lnk = $(e.target);
+    var t = $(lnk.attr('href'))
 
-        t.hide().removeClass('hidden').slideDown();
-        lnk.parent().slideUp();
+    t.hide().removeClass('hidden').slideDown();
+    lnk.parent().slideUp();
   });
 });
-
+ 
 $(document).on("page:fetch", function() {
   $('.spinner-frame').fadeIn("slow");
 });

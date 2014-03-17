@@ -86,6 +86,7 @@ GEM
     multi_json (1.9.0)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    nested_form (0.3.2)
     oauth2 (0.9.3)
       faraday (>= 0.8, < 0.10)
       jwt (~> 0.1.8)
@@ -189,6 +190,7 @@ DEPENDENCIES
   haml
   jbuilder (~> 1.2)
   jquery-rails
+  nested_form
   omniauth
   omniauth-github
   omniauth-google-oauth2
