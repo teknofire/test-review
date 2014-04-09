@@ -14,8 +14,8 @@
  *= require_tree .
  */
 
-body { 
-  padding-top: 40px; position: relative; 
+body {
+  padding-top: 40px; position: relative;
   background: #5f5f5f;
   color: #fff;
 }
@@ -41,6 +41,21 @@ body > .container { position: relative; }
   white-space: normal;
 }
 
+@media (max-width: 768px) {
+  .navbar-brand {
+    white-space: nowrap;
+    width: 80%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+.navbar-brand ol.breadcrumb li {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .navbar-brand ol.breadcrumb {
   margin: 0;
   padding: 0;
@@ -53,7 +68,7 @@ body > .container { position: relative; }
 
 .spinner-frame {
   display: none;
-  position: fixed;  
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
@@ -105,15 +120,15 @@ body > .container { position: relative; }
 }
 
 @-webkit-keyframes stretchdelay {
-  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
   20% { -webkit-transform: scaleY(1.0) }
 }
 
 @keyframes stretchdelay {
-  0%, 40%, 100% { 
+  0%, 40%, 100% {
     transform: scaleY(0.4);
     -webkit-transform: scaleY(0.4);
-  }  20% { 
+  }  20% {
     transform: scaleY(1.0);
     -webkit-transform: scaleY(1.0);
   }

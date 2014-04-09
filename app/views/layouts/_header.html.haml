@@ -1,6 +1,6 @@
 %section#header
   %nav.navbar.navbar-default.navbar-fixed-top
-    .container
+    .container-fluid
       .navbar-header
         %button.navbar-toggle{ type:"button", data: { toggle: "collapse", target: "#page-navbar" } }
           %span.sr-only Toggle navigation
@@ -11,6 +11,7 @@
           %ol.breadcrumb
             %li= link_to 'Test Review', root_path
             = yield :breadcrumbs
+
       #page-navbar.collapse.navbar-collapse
         %ul.nav.navbar-nav.navbar-right
           - if member?
